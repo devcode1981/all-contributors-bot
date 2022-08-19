@@ -20,7 +20,9 @@
     "test": "jest --collectCoverage",
     "test-watch": "jest --watch --notify --notifyMode=change",
     "test-ci": "jest --reporters ./node_modules/jest-junit --collectCoverage",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "@thundra/core": "^2.2.3",
@@ -29,13 +31,14 @@
     "compromise": "^11.13.0",
     "node-fetch": "^2.3.0",
     "probot": "^8.0.0-beta.1",
-    "uuid": "^7.0.0"
+    "uuid": "^7.0.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@tophat/eslint-config": "^0.1.4",
-    "codecov": "^3.1.0",
+    "codecov": "^3.7.1",
     "cz-conventional-changelog": "^2.1.0",
-    "eslint": "^6.0.1",
+    "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-jest": "^23.0.0",
     "eslint-plugin-prettier": "^3.0.1",
@@ -44,11 +47,11 @@
     "jest-junit": "^6.2.1",
     "nock": "^10.0.0",
     "prettier": "^1.16.1",
-    "semantic-release": "^15.13.3",
-    "serverless": "^1.39.1",
+    "semantic-release": "^19.0.0",
+    "serverless": "^2.1.0",
     "serverless-dotenv-plugin": "^2.0.1",
-    "serverless-offline": "^5.0.0",
-    "shelljs": "^0.8.3"
+    "serverless-offline": "^8.0.0",
+    "shelljs": "^0.8.5"
   },
   "jest": {
     "testEnvironment": "node",
@@ -76,5 +79,6 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  }
+  },
+  "snyk": true
 }
